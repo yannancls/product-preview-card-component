@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+:root {
+    /* Primary */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    /* Neutral */
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Hover Button */
+    --darker-cyan: hsl(157, 36%, 20%);
+
+    /* Fonts */
+    --montserrat: "Montserrat", sans-serif;
+    --fraunces: "Fraunces", serif;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.container {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    border-radius: 10px;
+}
+
+.img-div, .product-image, .product-texts {
+    width: 300px;
+    height: 450px;
+}
+
+.product-image {
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.product-texts {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    gap: 25px;
+}
+
+small, .product-details, .old-price, button {
+    font-family: var(--montserrat);
+}
+
+.product-name, .current-price {
+    font-family: var(--fraunces);
+}
+
+small {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--dark-grayish-blue);
+    font-weight: 500;
+}
+
+.product-name {
+    font-size: 33px;
+    line-height: 100%;
+    color: var(--very-dark-blue);
+}
+
+.product-details {
+    color: var(--dark-grayish-blue);
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.price-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.current-price {
+    color: var(--dark-cyan);
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    margin-left: 20px;
+    font-size: 12px;
+    color: var(--dark-grayish-blue);
+    font-weight: 500;
+}
+
+button {
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    border: none;
+    padding: 15px 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--darker-cyan);
+}
+
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+        width: 400px;
+        height: 700px;
+    }
+    
+    .product-texts {
+        height: 400px;
+        padding: 10px 0;
+    }
+
+    .img-div, .product-image {
+        height: 300px;
+        width: 400px;
+    }
+
+    .product-image {
+        content: url(images/image-product-mobile.jpg);
+        width: 100%;
+        object-fit: cover;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        flex-direction: column;
+        width: 300px;
+        height: 650px;
+    }
+    
+    .product-texts {
+        height: 400px;
+        padding: 30px;
+    }
+
+    .img-div, .product-image {
+        height: 250px;
+        width: 300px;
+    }
+
+    .product-image {
+        content: url(images/image-product-mobile.jpg);
+        width: 100%;
+        object-fit: cover;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        flex-direction: column;
+        width: 270px;
+        height: 550px;
+    }
+    
+    .product-texts {
+        height: 350px;
+        padding: 30px;
+        gap: 20px;
+    }
+
+    .img-div, .product-image {
+        height: 200px;
+        width: 270px;
+    }
+
+    .product-image {
+        content: url(images/image-product-mobile.jpg);
+        width: 100%;
+        object-fit: cover;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .product-name {
+        font-size: 25px;
+    }
+}
